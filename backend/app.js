@@ -9,7 +9,12 @@ import cors from 'cors';
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors(
+    {
+        origin: '*',
+        credentials: true,
+    }
+));
 
 // Connect MongoDB
 // mongoose.connect('mongodb://localhost:27017/sales_dashboard', {
